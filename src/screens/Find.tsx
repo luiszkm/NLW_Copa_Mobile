@@ -28,7 +28,7 @@ export function Find() {
         })
       }
 
-      api.post('/pools/join', { code })
+      api.post('/pools/join', { code: code.toUpperCase() })
       navigate('pools')
 
       return toast.show({
