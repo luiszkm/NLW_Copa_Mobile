@@ -8,7 +8,7 @@ import { Button } from "../components/Button";
 
 export function SignIn() {
 
-const {signIn , user} = useAuth()
+const {signIn , isUserLoading} = useAuth()
 
 
   return (
@@ -21,6 +21,8 @@ const {signIn , user} = useAuth()
         leftIcon={<Icon as={Fontisto} name="google" color="white" size="md" />}
         mt={12}
         onPress ={signIn}
+        isLoading ={ isUserLoading}
+        _loading={{_spinner:{color: 'white'}}	}
       />
 
 
