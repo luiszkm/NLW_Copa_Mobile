@@ -9,7 +9,7 @@ import { Box } from 'native-base'
 export function Routes() {
   const { user } = useAuth()
 
-
+  
   return (
     <Box flex={1} bgColor="gray.900">
 

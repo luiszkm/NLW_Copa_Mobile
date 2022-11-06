@@ -33,7 +33,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
   const [isUserLoading, setIsUserLoading] = useState(false)
 
   const [user, setUser] = useState<UserProps>({} as UserProps)
-
+  
   const [request, response, promptAsync] = Google.useAuthRequest({
     clientId: '848727285664-47vt9khtu7hr22n0mlq3flcd28ucb563.apps.googleusercontent.com',
     redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
@@ -70,7 +70,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
       const userInfoResponse = await api.get('/me')
       setUser(userInfoResponse.data.user)
 
-
+      
 
 
     } catch (error) {
@@ -95,10 +95,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
     <AuthContext.Provider value={{
       signIn,
       isUserLoading,
-      user: {
-        name: 'Luis',
-        avatarUrl: 'https://www.github.com/luiszkm.png',
-      }
+      user
     }} >
       {children}
 

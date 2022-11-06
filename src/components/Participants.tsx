@@ -9,15 +9,15 @@ export interface ParticipantProps {
 };
 
 interface Props {
-  participants: ParticipantProps[];
+  Participants: ParticipantProps[];
   count: number;
 };
 
-export function Participants({participants, count }: Props) {
+export function Participants({Participants, count }: Props) {
   return (
     <HStack>
       {
-        participants && participants.map((participant) => (
+        Participants && Participants.map((participant) => (
           <Avatar
             key={participant.id}
             source={{ uri: participant.user.avatarUrl}}
